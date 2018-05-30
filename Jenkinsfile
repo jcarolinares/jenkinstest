@@ -9,10 +9,11 @@ pipeline{
     stage('Compile Stage'){
 
       steps {
-
+          script{
+          checkout scm
           sh 'echo "Compile stage"'
           sleep 10
-
+          }
       }
     }
 
