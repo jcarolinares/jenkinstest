@@ -19,9 +19,10 @@ pipeline{
 
     stage('Testing stage'){
       steps {
-
+          script{
           sh 'echo "Testing stage"'
           sh 'python $PROGRAM_NAME'
+          }
       }
     }
 
