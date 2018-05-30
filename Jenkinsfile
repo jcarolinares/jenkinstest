@@ -1,5 +1,9 @@
 pipeline{
   agent any
+  environment{
+    PROGRAM_NAME="helloworld.py"
+  }
+
 
   stages {
     stage('Compile Stage'){
@@ -7,6 +11,7 @@ pipeline{
       steps {
 
           sh 'echo "Compile stage"'
+          sleep 10
 
       }
     }
@@ -15,7 +20,7 @@ pipeline{
       steps {
 
           sh 'echo "Testing stage"'
-
+          sh 'python $PROGRAM_NAME'
       }
     }
 
